@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kmix
 Summary:	kmix
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2b17c553902d93e85fe59cb95dc188ec
+# Source0-md5:	340f96d20e6e7598eed0fc60040fd484
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel
@@ -78,10 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kmix
 %attr(755,root,root) %{_bindir}/kmixctrl
 %attr(755,root,root) %{_bindir}/kmixremote
-%ghost %{_libdir}/libkmixcore.so.5
-%{_libdir}/libkmixcore.so.5.*.*
 %{_libdir}/qt5/plugins/kf5/kded/kmixd.so
-%{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_mixer.so
 %{_desktopdir}/org.kde.kmix.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.kmix.control.xml
 %{_datadir}/dbus-1/interfaces/org.kde.kmix.mixer.xml
@@ -94,8 +91,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kmix
 %{_datadir}/knotifications5/kmix.notifyrc
 %{_datadir}/kservices5/kmixctrl_restore.desktop
-%{_datadir}/kservices5/plasma-dataengine-mixer.desktop
 %dir %{_datadir}/kxmlgui5/kmix
 %{_datadir}/kxmlgui5/kmix/kmixui.rc
 %{_datadir}/metainfo/org.kde.kmix.appdata.xml
-%{_datadir}/plasma/services/mixer.operations
+%{_libdir}/libkmixcore.so.*.*.*
+%ghost %{_libdir}/libkmixcore.so.5
+%{_datadir}/config.kcfg/kmixsettings.kcfg
+%{_datadir}/qlogging-categories5/kmix.categories
