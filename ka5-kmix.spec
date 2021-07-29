@@ -45,8 +45,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 KMix is an application to allow you to change the volume of your sound
 card. Though small, it is full-featured, and it supports several
-platforms and sound drivers. Though small, it is full-featured, and it
-supports several platforms and sound drivers.
+platforms and sound drivers.
+
+%description -l pl.UTF-8
+KMix jest aplikacją pozwalającą Ci zmienić głośność Twojej karty
+dźwiękowej. Choć mały, jest pełen możliwości, obsługuje wiele platform
+i sterowników dźwięku.
 
 %prep
 %setup -q -n %{kaname}-%{version}
